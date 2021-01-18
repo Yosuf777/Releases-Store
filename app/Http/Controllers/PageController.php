@@ -10,6 +10,6 @@ class PageController extends Controller
     public function getIndex()
 {
     # code...
-    dd('get index');
+    dd('get index from controller ');
 }
 }
