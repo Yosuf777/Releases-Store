@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-    <a class="navbar-brand" href="{{ url('/') }}">blog</a>
+    <a class="navbar-brand" href="{{ url('/') }}">Release Store</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
         aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -10,19 +10,19 @@
         <ul class="navbar-nav mr-auto">
             <a class="nav-item nav-link active" href="{{ url('/') }}">Home <span class="sr-only">(current)</span></a>
             <a class="nav-item nav-link" href="{{ url('/about') }}">About</a>
-            <a class="nav-item nav-link" href="{{ url('/services') }}">Services</a>
-            <a class="nav-item nav-link" href="{{ url('/posts') }}">Posts</a>
+            {{-- <a class="nav-item nav-link" href="{{ url('/services') }}">Services</a> --}}
+            <a class="nav-item nav-link" href="{{ url('/release') }}">Release</a>
             @auth
-                <a class=" btn btn-primary" href="{{ url('/posts/create') }}">Create a Post</a>
+                <a class=" btn btn-primary" href="{{ url('/posts/create') }}">Create a Release</a>
             @endauth
 
         </ul>
 
         <!-- Right Side Of Navbar -->
-        <ul class="navbar-nav ml-auto">
+        {{-- <ul class="navbar-nav ml-auto">
             <!-- Authentication Links -->
 
-            @guest
+             @guest
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                 </li>
@@ -51,7 +51,7 @@
                         </form>
                     </div>
                 </li>
-            @endguest
-        </ul>
+            @endguest 
+        </ul> --}}
     </div>
 </nav>

@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    welcome to blog
+                    Welcome to Releases Store
                 </div>
 
                 <div class="links">
