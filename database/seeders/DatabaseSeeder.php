@@ -22,7 +22,7 @@ class DatabaseSeeder extends Seeder
         //     'password' => 12345,
         // ]);
         DB::table('releases')->insert([
-            'id' => 2,
+            'id' => 3,
             
         ]);
 
