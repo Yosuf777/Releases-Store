@@ -14,10 +14,17 @@ class ReleaseController extends Controller
      */
     public function index()
     {
-        //
-        $release = release::orderBy('id', 'desc')->paginate(5) ;
+        // dd('hhhhh');
+        $releases = release::orderBy('id', 'desc')->paginate(5);
+        // dd($releases);
         $count = release::count();
-        return view('release.index',  compact('release', 'count'));
+        return view('release.index',  compact('releases', 'count'));
+    }
+    public function show($id)
+    {
+        // dd('hello show');
+        $id = Release::find($id);
+        return view('release.show', compact('release'));
     }
 
     /**
@@ -47,10 +54,7 @@ class ReleaseController extends Controller
      * @param  \App\Models\Release  $release
      * @return \Illuminate\Http\Response
      */
-    public function show(Release $release)
-    {
-        //
-    }
+
 
     /**
      * Show the form for editing the specified resource.
@@ -79,7 +83,7 @@ class ReleaseController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\Release  $release
-      * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\Response
      */
     public function destroy(Release $release)
     {

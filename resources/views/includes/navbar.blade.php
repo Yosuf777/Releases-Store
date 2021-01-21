@@ -9,9 +9,10 @@
         <!-- Left Side Of Navbar -->
         <ul class="navbar-nav mr-auto">
             <a class="nav-item nav-link active" href="{{ url('/') }}">Home <span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link" href="{{ url('/about') }}">About</a>
+            <a class="nav-item nav-link" href="{{ route('about') }}">About</a>
             {{-- <a class="nav-item nav-link" href="{{ url('/services') }}">Services</a> --}}
-            <a class="nav-item nav-link" href="{{ url('/release') }}">Release</a>
+            <a class="nav-item nav-link" href="{{ route('release') }}">Release</a>
+           
             @auth
                 <a class=" btn btn-primary" href="{{ url('/posts/create') }}">Create a Release</a>
             @endauth

@@ -7,18 +7,18 @@
            
             <div class="card-body">
                 <div class="card-title">
-                    <h4> {{$post->title}}</h4>
+                    <h4> {{$release->title}}</h4>
                 </div>
 
-                <img src="{{asset('storage/coverImages/' . $post->image)}}" alt="" height="400" width="700">
+                <img src="{{asset('storage/coverImages/' . $release->image)}}" alt="" height="400" width="700">
 
                 <div class="card-text">
-                    {{$post->body}}
+                    {{$release->body}}
                 </div>
                 
                 <hr>
-                <small class="text-muted"> <p> {{$post->created_at}}</p></small>
-            <p style="color:brown;">created by: {{$post->user->name}}</p>
+                <small class="text-muted"> <p> {{$release->created_at}}</p></small>
+            <p style="color:brown;">created by: {{$release->user->name}}</p>
             @auth
 
                     @if( auth()->user()->id == $post->user_id)

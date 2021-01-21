@@ -7,7 +7,7 @@
         <div class="col-md-9">
             <div class="row">
                 <div class="row">
-                    @foreach($release as $release)
+                    @foreach($releases as $release)
                         <div class="col-md-4">
                             <div class="card mb-3" style="min-width: 18rem;">
                                 <img src="{{asset('storage/coverImages/' . $release->image)}}" alt="" height="200">
@@ -44,9 +44,10 @@
         </div>
     </div>
 
-    <div class="row">
+    <<div class="row">
         <div class="col-md-12 d-flex justify-content-center">
-            {{$release->links()}}
+            {{$releases->links()}}
         </div>
     </div>
+
 @endsection
