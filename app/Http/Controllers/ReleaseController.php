@@ -14,15 +14,14 @@ class ReleaseController extends Controller
      */
     public function index()
     {
-        // dd('hhhhh');
+       
         $releases = release::orderBy('id', 'desc')->paginate(5);
-        // dd($releases);
         $count = release::count();
         return view('release.index',  compact('releases', 'count'));
     }
     public function show($id)
     {
-        // dd('hello show');
+        dd('hi');
         $id = Release::find($id);
         return view('release.show', compact('release'));
     }
@@ -35,6 +34,7 @@ class ReleaseController extends Controller
     public function create()
     {
         //
+
     }
 
     /**

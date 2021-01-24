@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PageController;
+use App\Http\Controllers\ReleaseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +18,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/home', [PageController::class, 'index'])->name('index');
+Route::get('/relase', [ReleaseController::class, 'index'])->name('release');
+
+Route::get('/about', [PageController::class, 'about'])->name('about');
+Route::get('/show/{id}', [ReleaseController::class, 'show'])->name('show');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');

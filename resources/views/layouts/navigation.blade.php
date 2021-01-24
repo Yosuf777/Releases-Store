@@ -12,8 +12,14 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
+                    <x-nav-link :href="route('index')" :active="request()->routeIs('index')">
+                        {{ __('home') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('about')" :active="request()->routeIs('about')">
+                        {{ __('about') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('release')" :active="request()->routeIs('release')">
+                        {{ __('release') }}
                     </x-nav-link>
                 </div>
             </div>
@@ -78,6 +84,8 @@
                 </div>
 
                 <div class="ml-3">
+
+                    
                     <div class="font-medium text-base text-gray-800">{{ Auth::user()->name }}</div>
                     <div class="font-medium text-sm text-gray-500">{{ Auth::user()->email }}</div>
                 </div>

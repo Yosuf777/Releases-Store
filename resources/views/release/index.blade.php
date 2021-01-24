@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.app')
 
 @section('content')
     <h2> List of all Releas</h2>
@@ -22,7 +22,7 @@
                                         {{$release->body}}
                                     </div>
                                     <hr>
-                                <a href="{{ '/release/' . $release->id}}" class="btn btn-primary"> Show More</a>
+                                <a href="{{ '/show/' . $release->id}}" class="btn btn-primary"> Show More</a>
                                 </div>    
                             </div>
                        </div>

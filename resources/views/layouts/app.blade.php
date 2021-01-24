@@ -12,6 +12,9 @@
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
@@ -23,13 +26,15 @@
             <!-- Page Heading -->
             <header class="bg-white shadow">
                 <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                    {{ $header }}
+                    {{-- {{ $header }} --}}
+                    @yield('content')
                 </div>
             </header>
 
             <!-- Page Content -->
             <main>
-                {{ $slot }}
+                {{-- {{ $slot }} --}}
+               
             </main>
         </div>
     </body>
