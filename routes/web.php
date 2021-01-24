@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ReleaseController;
@@ -36,3 +37,10 @@ Route::get('/about', [PageController::class, 'about'])->name('about');
 // Route::put('/posts/{id}','PostsController@update')->name('posts.update');
 
 // Route::delete('/posts/{id}','PostsController@destroy')->name('posts.destroy');
+
+// Auth::routes();
+
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::view('home', 'home')->name('home');
+});
+
