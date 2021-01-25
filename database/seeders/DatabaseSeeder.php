@@ -21,17 +21,28 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'yousef'.'@gmail.com',
         //     'password' => 12345,
         // ]);
-        DB::table('releases')->insert([
-            'id' => 2,
-            
-        ]);
-
+       
         DB::table('users')->insert([
             'name' => Str::random(10),
             'email' => Str::random(10).'@gmail.com',
             'password' => Hash::make('password'),
         ]);
 
+        DB::table('releases')->insert([
+            'name' => Str::random(10),
+            'description' =>Str::random(10),
+            'username' => Str::random(10),
+
+        ]);
+DB::table('pages')->insert([
+            'body' =>Str::random(10),
+
+        ]);
+        
+        DB::table('tags')->insert([
+             'name' => Str::random(10),
+
+         ]);
         
     }
 }

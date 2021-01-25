@@ -15,6 +15,9 @@ class CreateReleasesTable extends Migration
     {
         Schema::create('releases', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->text('description');
+            $table->string('username');
             $table->timestamps();
         });
     }

@@ -18,8 +18,8 @@
                 
                 <hr>
                 <small class="text-muted"> <p> {{$release->created_at}}</p></small>
-            <p style="color:brown;">created by: {{$release->user->name}}</p>
-            @auth
+            {{-- <p style="color:brown;">created by: {{$release->user->name}}</p> --}}
+            {{-- @auth
 
                     @if( auth()->user()->id == $post->user_id)
                     <a href="{{ '/posts/' . $post->id . '/edit'}}" class="btn btn-primary float-left mr-2"> Edit</a>
@@ -32,7 +32,7 @@
 
                     </form>
                 @endif
-            @endauth
+            @endauth --}}
             </div>    
         </div>
     </div>

@@ -21,8 +21,8 @@ class ReleaseController extends Controller
     }
     public function show($id)
     {
-        dd('hi');
-        $id = Release::find($id);
+       // dd('hi');
+        $release = release::find($id);
         return view('release.show', compact('release'));
     }
 
@@ -45,7 +45,7 @@ class ReleaseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //cl
     }
 
     /**
