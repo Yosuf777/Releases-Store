@@ -25,6 +25,9 @@ Route::get('/relase', [ReleaseController::class, 'index'])->name('release');
 Route::get('/about', [PageController::class, 'about'])->name('about');
 Route::get('/show/{id}', [ReleaseController::class, 'show'])->name('show');
 
+Route::get('/create', [ReleaseController::class, 'create'])->name('create');
+
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');

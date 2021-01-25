@@ -19,12 +19,12 @@
                 <hr>
                 <small class="text-muted"> <p> {{$release->created_at}}</p></small>
             {{-- <p style="color:brown;">created by: {{$release->user->name}}</p> --}}
-            {{-- @auth
+            @auth
 
-                    @if( auth()->user()->id == $post->user_id)
-                    <a href="{{ '/posts/' . $post->id . '/edit'}}" class="btn btn-primary float-left mr-2"> Edit</a>
+                    @if( auth()->user()->id == $release->user_id)
+                    <a href="{{ '/release/' . $release->id . '/edit'}}" class="btn btn-primary float-left mr-2"> Edit</a>
                 
-                    <form action="{{route('posts.destroy', ['id' => $post->id])}}" method="POST">
+                    <form action="{{route('release.destroy', ['id' => $release->id])}}" method="POST">
                     
                         @csrf
                         @method('DELETE')
@@ -32,7 +32,7 @@
 
                     </form>
                 @endif
-            @endauth --}}
+            @endauth
             </div>    
         </div>
     </div>
