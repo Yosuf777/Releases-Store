@@ -17,7 +17,7 @@ class CreateReleasesTable extends Migration
             $table->id();
             $table->string('name');
             $table->text('description');
-            $table->string('username');
+          //  $table->string('username');
             $table->timestamps();
         });
     }

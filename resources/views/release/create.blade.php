@@ -6,7 +6,7 @@
      <div class="col-md-9 offset-md-2">
          <h3>Create New  Release</h3>
          <hr>
-         <form action="/relase" method="POST">
+         <form action="/store" method="POST">
 
             @csrf
             <div class="form-group">

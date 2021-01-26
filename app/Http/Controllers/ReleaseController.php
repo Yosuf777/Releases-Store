@@ -44,7 +44,30 @@ class ReleaseController extends Controller
      */
     public function store(Request $request)
     {
-        //cl
+       //   dd($request->all());
+        $request->validate([
+
+            'title' =>  'required|max:200',
+            'body' => 'required|max:500'
+
+        ]);
+
+        $release = new Release() ;
+        $release->name =  $request->title ;
+        $release->description =  $request->body ;
+        
+        // $table->id();
+        // $table->string('name');
+        // $table->text('description');
+        // $table->string('username');
+        // $table->timestamps();
+
+        $release->save();
+
+        return redirect()->route('release')->with('status', 'Release was created !');
+
+
+
     }
 
     /**
@@ -61,10 +84,16 @@ class ReleaseController extends Controller
      * @param  \App\Models\Release  $release
      * @return \Illuminate\Http\Response
      */
-    public function edit(Release $release)
+    public function edit($id)
     {
-        //
+        //dd('ddd');
+        $release = release::find($id);
+        // if (auth()->user()->id !== $release->user_id) {
+        //     return redirect('/release')->with('error', ' You are not authorized');
+        // }
+        return view('release.edit', compact('release'));
     }
+
 
     /**
      * Update the specified resource in storage.
@@ -75,7 +104,23 @@ class ReleaseController extends Controller
      */
     public function update(Request $request, Release $release)
     {
-        //
+        
+        $request->validate([
+
+            'title' =>  'required|max:200',
+            'body' => 'required|max:500'
+
+        ]);
+
+        $release = new Release() ;
+        $release->name =  $request->title ;
+        $release->description =  $request->body ;
+        
+        $release->save();
+
+        return redirect()->route('release')->with('status', 'Release was updated !');
+
+
     }
 
     /**

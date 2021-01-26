@@ -25,7 +25,13 @@ Route::get('/relase', [ReleaseController::class, 'index'])->name('release');
 Route::get('/about', [PageController::class, 'about'])->name('about');
 Route::get('/show/{id}', [ReleaseController::class, 'show'])->name('show');
 
-Route::get('/create', [ReleaseController::class, 'create'])->name('create');
+Route::get('/relase/create', [ReleaseController::class, 'create'])->name('create');
+
+Route::post('/store', [ReleaseController::class, 'store'])->name('store');
+
+Route::get('/edit/{id}', [ReleaseController::class, 'edit'])->name('edit');
+Route::put('/update/{id}', [ReleaseController::class, 'update'])->name('update');
+
 
 
 
