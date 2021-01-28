@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Release extends Model
 {
     use HasFactory;
+
+
+
+public function releases() {
+    return $this->hasMany('App\Page');
+}
+
 }

@@ -16,10 +16,10 @@
                                 </div>
                                 <div class="card-body">
                                     <div class="card-title">
-                                        <h4> {{$release->title}}</h4>
+                                        <h4> {{$release->name}}</h4>
                                     </div>
                                     <div class="card-text">
-                                        {{$release->body}}
+                                        {{$release->description}}
                                     </div>
                                     <hr>
                                 {{-- <a href="{{ '/show/' . $release->id}}" class="btn btn-primary"> Show More</a> --}}

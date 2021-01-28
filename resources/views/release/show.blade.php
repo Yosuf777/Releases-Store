@@ -23,13 +23,13 @@
             {{-- @auth --}}
 
                     {{-- @if( auth()->user()->id == $release->user_id) --}}
-                    <a href="{{ '/release/' . $release->id . '/edit'}}" class="btn btn-primary float-left mr-2"> Edit</a>
+                    <a href="{{route('edit',['id'=> $release->id]) }}" class="btn btn-primary float-left mr-2"> Edit</a>
                 
-                    {{-- <form action="{{route('release.destroy', ['id' => $release->id])}}" method="POST"> --}}
+                    <form action="{{route('delete', ['id' => $release->id])}}" method="POST"> 
                     
                         @csrf
-                        {{-- @method('DELETE')
-                        <button type="submit" class="btn btn-danger float-left"> Delete</button> --}}
+                       {{-- @method('DELETE')  --}}
+                       <button type="submit" class="btn btn-danger float-left"> Delete</button>
 
                     </form>
                 {{-- @endif --}}

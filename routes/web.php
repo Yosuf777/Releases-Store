@@ -32,6 +32,7 @@ Route::post('/store', [ReleaseController::class, 'store'])->name('store');
 Route::get('/edit/{id}', [ReleaseController::class, 'edit'])->name('edit');
 Route::put('/update/{id}', [ReleaseController::class, 'update'])->name('update');
 
+Route::post('/delete/{id}', [ReleaseController::class, 'destroy'])->name('delete');
 
 
 

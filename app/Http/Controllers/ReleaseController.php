@@ -55,7 +55,8 @@ class ReleaseController extends Controller
         $release = new Release() ;
         $release->name =  $request->title ;
         $release->description =  $request->body ;
-        
+
+        $release->release_id = auth()->user()->id ;
         // $table->id();
         // $table->string('name');
         // $table->text('description');
@@ -118,7 +119,7 @@ class ReleaseController extends Controller
         
         $release->save();
 
-        return redirect()->route('release')->with('status', 'Release was updated !');
+        return redirect()->route('release')->compact('status', 'Release was updated !');
 
 
     }
@@ -129,11 +130,13 @@ class ReleaseController extends Controller
      * @param  \App\Models\Release  $release
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Release $release)
+    public function destroy($release)
     {
-        //
+    
         $release = release::find($release) ;
+      //  dd('ddd');
+
         $release->delete();
-        return redirect('/release')->compact('status', 'release was deleted !');
+        return redirect('/relase')->compact('status', 'release was deleted !');
     }
 }

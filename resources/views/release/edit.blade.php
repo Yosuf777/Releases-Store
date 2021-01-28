@@ -6,7 +6,7 @@
      <div class="col-md-9 offset-md-2">
          <h3>Edit Post Form</h3>
          <hr>
-         <form action="/update" method="POST">
+         <form action="{{route('update',['id'=> $release->id]) }}" method="POST">
             @csrf
             @method('PUT')
 

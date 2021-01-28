@@ -31,7 +31,8 @@ class DatabaseSeeder extends Seeder
         DB::table('releases')->insert([
             'name' => Str::random(10),
             'description' =>Str::random(10),
-          
+            'release_id' =>'6',
+//with user id somehow
 
         ]);
 DB::table('pages')->insert([
