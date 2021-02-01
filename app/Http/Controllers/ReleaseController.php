@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Page;
 use App\Models\Release;
 use Illuminate\Http\Request;
 
@@ -22,6 +23,7 @@ class ReleaseController extends Controller
     public function show($id)
     {
         $release = release::find($id);
+
         return view('release.show', compact('release'));
     }
 
@@ -56,7 +58,16 @@ class ReleaseController extends Controller
         $release->name =  $request->title ;
         $release->description =  $request->body ;
 
-        $release->release_id = auth()->user()->id ;
+        $release->user_id = auth()->user()->id ;
+
+        // $page = new Page();
+        // $page->title =  $request->page_title ;
+        // $page->body =  $request->page_body ;
+        // $page->release_id =  auth()->user()->id;
+        // $table->string('title');
+        // $table->string('body');
+        // $table->unsignedInteger('release_id');
+
         // $table->id();
         // $table->string('name');
         // $table->text('description');
@@ -64,6 +75,7 @@ class ReleaseController extends Controller
         // $table->timestamps();
 
         $release->save();
+        // $page->save();
 
         return redirect()->route('release')->with('status', 'Release was created !');
 

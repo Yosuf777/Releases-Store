@@ -11,7 +11,7 @@ class Page extends Model
 
 
 
-    public function pages() {
+    public function release() {
         return $this->belongsTo('App\Release');
     }
 }

@@ -10,9 +10,13 @@ class Release extends Model
     use HasFactory;
 
 
-
-public function releases() {
+//many to one 
+public function pages() {
     return $this->hasMany('App\Page');
 }
 
+//one to many
+public function user() {
+    return $this->belongsTo('App\User');
+}
 }

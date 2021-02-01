@@ -41,8 +41,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-
-    public function users() {
-        return $this->belongsTo('App\User');
+//many to one 
+    public function releases() {
+        return $this->hasMany('App\Release');
     }
 }
