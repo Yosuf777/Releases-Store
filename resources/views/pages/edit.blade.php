@@ -4,20 +4,20 @@
 
  <div class="row">
      <div class="col-md-9 offset-md-2">
-         <h3>Edit Release</h3>
+         <h3>Edit page</h3>
          <hr>
-         <form action="{{route('update',['id'=> $release->id]) }}" method="POST">
+         <form action="{{route('page.update',['id'=> $page->id]) }}" method="POST">
             @csrf
             @method('PUT')
 
             <div class="form-group">
-                <label for="title">Release Name</label>
-            <input type="text" name="title" id="title" class="form-control" value="{{$release->name}}">
+                <label for="title">page Name</label>
+            <input type="text" name="title" id="title" class="form-control" value="{{$page->title}}">
             </div>
    
             <div class="form-group">
-               <label for="body">Release description</label>
-            <textarea name="body" id="body" cols="30" rows="4" class="form-control"> {{$release->description}}</textarea>
+               <label for="body">page description</label>
+            <textarea name="body" id="body" cols="30" rows="4" class="form-control"> {{$page->body}}</textarea>
            </div>
 
    

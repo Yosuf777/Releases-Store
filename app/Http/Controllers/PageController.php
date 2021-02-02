@@ -22,23 +22,25 @@ class PageController extends Controller
 
         return view('pages.about');
     }
-    // public function show($id)
-    // {
-    //     $release = release::find($id);
-
-    //     return view('release.show', compact('release'));
-    // }
+    public function show($id)
+    {
+        $page = Page::find($id);
+// dd($page);
+        return view('pages.show', compact('page'));
+    }
 
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
         //
         // dd('hhhhh');
-        return view('pages.create');
+        $release = release::find($id);
+
+        return view('pages.create',compact('release'));
     }
 
     /**
@@ -47,15 +49,21 @@ class PageController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+    // public function store(Request $request,$id)
+
     public function store(Request $request)
     {
        //input hidden 
        // dd("ggg");
+       $releases = new Release();
         $page = new Page() ;
-        $page->release_id =  auth()->user()->id;
         $page->title =  $request->page_title ;
         $page->body =  $request->page_body ;
-        
+        // $page->release_id =          auth()->user()->id;
+        // $page->release_id =  $id;
+
+        $page->release_id =  $request->release_id;
+
         $page->save();
 
         return redirect()->route('release')->with('status', 'page was created !');
@@ -78,12 +86,13 @@ class PageController extends Controller
      */
     public function edit($id)
     {
-        //dd('ddd');
-        $release = release::find($id);
+       
+        $page = Page::find($id);
         // if (auth()->user()->id !== $release->user_id) {
         //     return redirect('/release')->with('error', ' You are not authorized');
         // }
-        return view('release.edit', compact('release'));
+      //  dd('lol');
+        return view('pages.edit', compact('page'));
     }
 
 
@@ -94,7 +103,7 @@ class PageController extends Controller
      * @param  \App\Models\Release  $release
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Release $release)
+    public function update(Request $request, $id)
     {
         
         $request->validate([
@@ -104,13 +113,14 @@ class PageController extends Controller
 
         ]);
 
-        $release = new Release() ;
-        $release->name =  $request->title ;
-        $release->description =  $request->body ;
-        
-        $release->save();
+        $page = Page::find($id);
+        $page->title =  $request->title ;
+        $page->body =  $request->body ;
+      //  $release->user_id = $request->id;
+        $page->save();
 
-        return redirect()->route('release')->compact('status', 'Release was updated !');
+        return redirect()->route('release')->with('status', 'Release was updated !');
+
 
 
     }
@@ -121,13 +131,16 @@ class PageController extends Controller
      * @param  \App\Models\Release  $release
      * @return \Illuminate\Http\Response
      */
-    public function destroy($release)
+    public function destroy($page)
     {
     
-        $release = release::find($release) ;
+      
+       $page = Page::find($page) ;
       //  dd('ddd');
 
-        $release->delete();
-        return redirect('/relase')->compact('status', 'release was deleted !');
+
+        
+        $page->delete();
+        return redirect('/relase')->with('status', 'release was deleted !');
     }
 }

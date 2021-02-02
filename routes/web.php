@@ -32,10 +32,12 @@ Route::put('/update/{id}', [ReleaseController::class, 'update'])->name('update')
 Route::post('/delete/{id}', [ReleaseController::class, 'destroy'])->name('delete');
 
 //pages route 
-Route::get('/page/create', [PageController::class, 'create'])->name('page.create');
-
+Route::get('/page/show/{id}', [PageController::class, 'show'])->name('page.show');
+Route::get('/page/create/{id}', [PageController::class, 'create'])->name('page.create');
 Route::post('/page/store', [PageController::class, 'store'])->name('page.store');
-
+Route::get('/page/edit/{id}', [PageController::class, 'edit'])->name('page.edit');
+Route::put('/page/update/{id}', [PageController::class, 'update'])->name('page.update');
+Route::post('/page/delete/{id}', [PageController::class, 'destroy'])->name('page.delete');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

@@ -43,6 +43,6 @@ class User extends Authenticatable
 
 //many to one 
     public function releases() {
-        return $this->hasMany('App\Release');
+        return $this->hasMany('App\Models\Release');
     }
 }

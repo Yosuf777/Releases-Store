@@ -10,7 +10,7 @@
         <div class="card mb-3" style="min-width: 18rem;">
            
             <div class="card-body">
-                <a href="{{route('page.create') }}" class="btn btn-primary float-right mr-2"> Create Page</a>
+                <a href="{{route('page.create',['id'=> $release->id]) }}" class="btn btn-primary float-right mr-2"> Create Page</a>
 
                 <div class="card-title">
                     <h4> {{$release->name}}</h4>
@@ -42,7 +42,28 @@
 
                 {{-- @endif --}}
             {{-- @endauth --}}
-            </div>    
+            </div> 
+            {{-- @dump($release->pages)    --}}
+
+            @foreach($release->pages as $page)
+            <div class="col-md-4">
+                <div class="card mb-3" style="min-width: 18rem;">
+                    <div class="card-header bg-dark text-white">
+                            {{$page->title}}
+                    </div>
+                    <div class="card-body">
+                        
+                        <div class="card-text">
+                            {{$page->body}}
+                        </div>
+                        <hr>
+                    {{-- <a href="{{ '/show/' . $release->id}}" class="btn btn-primary"> Show More</a> --}}
+                    <a href="{{ route('page.show', ['id' => $page->id ])}}" class="btn btn-primary"> Show More</a>
+                    </div>    
+                </div>
+           </div>
+        @endforeach
+
 
         </div>
     </div>

@@ -115,7 +115,7 @@ class ReleaseController extends Controller
      * @param  \App\Models\Release  $release
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Release $release)
+    public function update(Request $request, $id)
     {
         
         $request->validate([
@@ -125,13 +125,13 @@ class ReleaseController extends Controller
 
         ]);
 
-        $release = new Release() ;
+        $release = release::find($id);
         $release->name =  $request->title ;
         $release->description =  $request->body ;
-        
+      //  $release->user_id = $request->id;
         $release->save();
 
-        return redirect()->route('release')->compact('status', 'Release was updated !');
+        return redirect()->route('release')->with('status', 'Release was updated !');
 
 
     }
@@ -149,6 +149,6 @@ class ReleaseController extends Controller
       //  dd('ddd');
 
         $release->delete();
-        return redirect('/relase')->compact('status', 'release was deleted !');
+        return redirect('/relase')->with('status', 'release was deleted !');
     }
 }
