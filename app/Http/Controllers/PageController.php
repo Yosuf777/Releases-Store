@@ -141,6 +141,6 @@ class PageController extends Controller
 
         
         $page->delete();
-        return redirect('/relase')->with('status', 'release was deleted !');
+        return redirect('/release')->with('status', 'release was deleted !');
     }
 }
