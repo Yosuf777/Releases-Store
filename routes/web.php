@@ -31,6 +31,15 @@ Route::get('/edit/{id}', [ReleaseController::class, 'edit'])->name('edit');
 Route::put('/update/{id}', [ReleaseController::class, 'update'])->name('update');
 Route::post('/delete/{id}', [ReleaseController::class, 'destroy'])->name('delete');
 
+//tags route 
+
+// Route::get('/tag/show/{id}', [TagController::class, 'show'])->name('tag.show');
+// Route::get('/teg/create', [TagController::class, 'create'])->name('tag.create');
+// Route::post('/teg/store', [TagController::class, 'store'])->name('tag.store');
+// Route::get('/tag/tag/edit/{id}', [TagController::class, 'edit'])->name('tag.edit');
+// Route::put('/tag/update/{id}', [TagController::class, 'update'])->name('tag.update');
+// Route::post('/tag/delete/{id}', [TagController::class, 'destroy'])->name('tag.delete');
+
 //pages route 
 Route::get('/page/show/{id}', [PageController::class, 'show'])->name('page.show');
 Route::get('/page/create/{id}', [PageController::class, 'create'])->name('page.create');

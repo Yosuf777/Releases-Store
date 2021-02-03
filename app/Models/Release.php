@@ -19,4 +19,12 @@ public function pages() {
 public function user() {
     return $this->belongsTo('App\Models\User');
 }
+
+
+public function tags()
+{
+    return $this->belongsToMany(Tag::class);
+}
+
+
 }

@@ -31,19 +31,20 @@ class DatabaseSeeder extends Seeder
         DB::table('releases')->insert([
             'name' => Str::random(10),
             'description' =>Str::random(10),
-            'release_id' =>'6',
+            'user_id' =>'1',
 //with user id somehow
 
         ]);
-DB::table('pages')->insert([
-            'body' =>Str::random(10),
+// DB::table('pages')->insert([
 
-        ]);
+//             'body' =>Str::random(10),
+
+//         ]);
         
-        DB::table('tags')->insert([
-             'name' => Str::random(10),
+        // DB::table('tags')->insert([
+        //      'name' => Str::random(10),
 
-         ]);
+        //  ]);
         
     }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Page;
 use App\Models\Release;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 
 class ReleaseController extends Controller
@@ -60,22 +61,30 @@ class ReleaseController extends Controller
 
         $release->user_id = auth()->user()->id ;
 
-        // $page = new Page();
-        // $page->title =  $request->page_title ;
-        // $page->body =  $request->page_body ;
-        // $page->release_id =  auth()->user()->id;
-        // $table->string('title');
-        // $table->string('body');
-        // $table->unsignedInteger('release_id');
-
-        // $table->id();
-        // $table->string('name');
-        // $table->text('description');
-        // $table->string('username');
-        // $table->timestamps();
-
         $release->save();
-        // $page->save();
+
+        $tag = new Tag();
+        $tag->name = '$first_tage';
+        
+ 
+        $tag->save();
+
+        $release = Release::find([3, 4]);
+        $tag->releases()->attach($release);
+
+       dd('HI');
+ 
+       // $release = Release::find(1);
+        // dd($tag);
+      //  dd($release);
+       
+     // $tag->releases()->attach(1,['$release->id','$tag->id']);
+
+
+      //  $release->tag()->attach(1,['column_name_in_pivot','any_value you want']); 
+//It will create record with additional column data.
+
+
 
         return redirect()->route('release')->with('status', 'Release was created !');
 

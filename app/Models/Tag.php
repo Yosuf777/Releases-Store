@@ -5,16 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Page extends Model
+class Tag extends Model
 {
     use HasFactory;
 
-
-
-    public function release() {
-        return $this->belongsTo('App\Models\Release');
-    }
-
-
-    
+    public function releases()
+    {
+        return $this->belongsToMany(Release::class);
+    }  
 }

@@ -21,6 +21,10 @@
                 <div class="card-text">
                     {{$release->description}}
                 </div>
+
+                {{-- <div class="card-text">
+                    {{$tage->name}}
+                </div> --}}
                 
                 <hr>
                 <small class="text-muted"> <p> {{$release->created_at}}</p></small>
