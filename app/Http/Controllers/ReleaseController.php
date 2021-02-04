@@ -36,7 +36,11 @@ class ReleaseController extends Controller
     public function create()
     {
         //
-        return view('release.create');
+        
+        $tags = Tag::all();
+
+        return view('release.create', ['tags' => $tags]);
+        // return view('release.create');
     }
 
     /**
@@ -64,25 +68,16 @@ class ReleaseController extends Controller
         $release->save();
 
         $tag = new Tag();
-        $tag->name = '$first_tage';
-        
- 
-        $tag->save();
 
-        $release = Release::find([3, 4]);
+        // $tag->name =  $request->tag_name;
+
+
+        // $tag->save();
+
+
         $tag->releases()->attach($release);
 
-       dd('HI');
- 
-       // $release = Release::find(1);
-        // dd($tag);
-      //  dd($release);
-       
-     // $tag->releases()->attach(1,['$release->id','$tag->id']);
-
-
-      //  $release->tag()->attach(1,['column_name_in_pivot','any_value you want']); 
-//It will create record with additional column data.
+      
 
 
 

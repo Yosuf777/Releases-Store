@@ -20,38 +20,31 @@
            </div>
 
            <div class="form-group">
-
-            {{-- <select class="form-select" aria-label="Default select example">
-                <option selected>Release Tags menu</option>
-                <option value="first_tag">first tag</option>
-                <option value="second_tag">second tag</option>
-                <option value="third_tag">Third tag</option>
-              </select> --}}
-<!-- Basic dropdown -->
-{{-- <button class="btn btn-primary dropdown-toggle mr-4" type="button" data-toggle="dropdown"
+         
+           
+          
+ <button class="btn btn-primary dropdown-toggle mr-4" type="button" data-toggle="dropdown" 
 aria-haspopup="true" aria-expanded="false">Select Tags </button>
 
 <div class="dropdown-menu">
 <a class="dropdown-item">
 <!-- Default unchecked -->
+
+@foreach($tags as $tag)
+
 <div class="custom-control custom-checkbox">
-<input type="checkbox" class="custom-control-input" id="checkbox1">
-<label class="custom-control-label" for="checkbox1">tag one</label>
-</div>
-</a>
-<a class="dropdown-item" href="#">
-<div class="custom-control custom-checkbox">
-<input type="checkbox" class="custom-control-input" id="checkbox2" checked>
-<label class="custom-control-label" for="checkbox2">tag two</label>
-</div>
-</a>
-<a class="dropdown-item" href="#">
-<div class="custom-control custom-checkbox">
-<input type="checkbox" class="custom-control-input" id="checkbox3">
-<label class="custom-control-label" for="checkbox3">tag three</label>
+<input type="checkbox" class="custom-control-input" id="checkbox1" name="tag_name" value="{{ $tag->name }}">
+<label class="custom-control-label" for="checkbox1">{{ $tag->name }}</label>
 </div>
 </a>
 
+
+@endforeach
+</div> 
+
+{{-- <div>
+@foreach($tags as $tag)
+{{ $tag->name }}
 </div> --}}
 <!-- Basic dropdown -->
            
