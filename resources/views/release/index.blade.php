@@ -19,7 +19,7 @@
                                         <h4> {{$release->name}}</h4>
                                     </div>
                                     <div class="card-text">
-                                        {{$release->description}}
+                                        {{$release->body}}
                                     </div>
                                     <hr>
                                 {{-- <a href="{{ '/show/' . $release->id}}" class="btn btn-primary"> Show More</a> --}}

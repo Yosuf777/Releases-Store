@@ -16,8 +16,8 @@
             </div>
    
             <div class="form-group">
-               <label for="body">Release description</label>
-            <textarea name="body" id="body" cols="30" rows="4" class="form-control"> {{$release->description}}</textarea>
+               <label for="body">Release body</label>
+            <textarea name="body" id="body" cols="30" rows="4" class="form-control"> {{$release->body}}</textarea>
            </div>
 
    

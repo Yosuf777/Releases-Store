@@ -12,7 +12,7 @@
             <div class="card-body">
 
                 <div class="card-title">
-                    <h4> {{$page->title}}</h4>
+                    <h4> {{$page->name}}</h4>
                 </div>
 
                 {{-- <img src="{{asset('storage/coverImages/' . $page->image)}}" alt="" height="400" width="700"> --}}

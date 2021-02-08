@@ -57,7 +57,7 @@ class PageController extends Controller
        // dd("ggg");
        $releases = new Release();
         $page = new Page() ;
-        $page->title =  $request->page_title ;
+        $page->name =  $request->page_name ;
         $page->body =  $request->page_body ;
         // $page->release_id =          auth()->user()->id;
         // $page->release_id =  $id;

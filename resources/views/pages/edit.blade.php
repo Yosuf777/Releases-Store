@@ -12,11 +12,11 @@
 
             <div class="form-group">
                 <label for="title">page Name</label>
-            <input type="text" name="title" id="title" class="form-control" value="{{$page->title}}">
+            <input type="text" name="title" id="title" class="form-control" value="{{$page->name}}">
             </div>
    
             <div class="form-group">
-               <label for="body">page description</label>
+               <label for="body">page body</label>
             <textarea name="body" id="body" cols="30" rows="4" class="form-control"> {{$page->body}}</textarea>
            </div>
 

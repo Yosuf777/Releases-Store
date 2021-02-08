@@ -11,6 +11,6 @@ class Tag extends Model
 
     public function releases()
     {
-        return $this->belongsToMany(Release::class);
+        return $this->belongsToMany(Release::class, 'release_tag');
     }  
 }

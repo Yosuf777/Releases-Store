@@ -16,10 +16,9 @@
                     <h4> {{$release->name}}</h4>
                 </div>
 
-                {{-- <img src="{{asset('storage/coverImages/' . $release->image)}}" alt="" height="400" width="700"> --}}
 
                 <div class="card-text">
-                    {{$release->description}}
+                    {{$release->body}}
                 </div>
 
                 {{-- <div class="card-text">

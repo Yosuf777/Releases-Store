@@ -61,13 +61,25 @@ class ReleaseController extends Controller
 
         $release = new Release() ;
         $release->name =  $request->title ;
-        $release->description =  $request->body ;
+        $release->body =  $request->body ;
 
         $release->user_id = auth()->user()->id ;
-
         $release->save();
+      
+        $tagsIds = Tag::find($request->tag_id);
+       // $release = release::find($id);
 
-        $tag = new Tag();
+        $release->tags()->attach($tagsIds); 
+
+        return redirect()->route('release')->with('status', 'Release was created !');
+
+    }
+ // $releasesIds = [1,2];
+        // $release->tags()->attach($releasesIds);
+
+
+
+    //    $tag = new Tag();
 
         // $tag->name =  $request->tag_name;
 
@@ -75,17 +87,11 @@ class ReleaseController extends Controller
         // $tag->save();
 
 
-        $tag->releases()->attach($release);
-
-      
+       // $tag->releases()->attach($release);
 
 
 
-        return redirect()->route('release')->with('status', 'Release was created !');
-
-
-
-    }
+   
 
     /**
      * Display the specified resource.
@@ -131,7 +137,7 @@ class ReleaseController extends Controller
 
         $release = release::find($id);
         $release->name =  $request->title ;
-        $release->description =  $request->body ;
+        $release->body =  $request->body ;
       //  $release->user_id = $request->id;
         $release->save();
 

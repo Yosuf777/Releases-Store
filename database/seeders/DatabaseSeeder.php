@@ -30,7 +30,7 @@ class DatabaseSeeder extends Seeder
 
         DB::table('releases')->insert([
             'name' => Str::random(10),
-            'description' =>Str::random(10),
+            'body' =>Str::random(10),
             'user_id' =>'1',
 //with user id somehow
 

@@ -12,8 +12,8 @@
             @csrf
                
            <div class="form-group">
-            <label for="page_title">Page Title</label>
-            <input type="text" name="page_title" id="page_title" class="form-control">
+            <label for="page_name">Page Title</label>
+            <input type="text" name="page_name" id="page_name" class="form-control">
         </div>
 
         <div class="form-group">
