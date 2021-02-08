@@ -69,7 +69,7 @@ class ReleaseController extends Controller
        // $tagsIds = Tag::find($request->tag_id);
        // $release = release::find($id);
 
-        $release->tags()->attach($request->tag_id); 
+        $release->tags()->attach($request->tags); 
 
         return redirect()->route('release')->with('status', 'Release was created !');
 

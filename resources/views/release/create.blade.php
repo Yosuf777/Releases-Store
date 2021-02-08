@@ -26,7 +26,7 @@
                         <li>
 
                             <label>
-                                <input type="checkbox" name="tag_id[]" value="{{ $tag->id }}">
+                                <input type="checkbox" name="tags[]" value="{{ $tag->id }}">
                                 {{ $tag->name }}
                             </label>
 
