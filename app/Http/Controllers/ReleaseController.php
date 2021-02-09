@@ -64,12 +64,13 @@ class ReleaseController extends Controller
         $release->body =  $request->body ;
 
         $release->user_id = auth()->user()->id ;
+       
         $release->save();
       
        // $tagsIds = Tag::find($request->tag_id);
        // $release = release::find($id);
 
-        $release->tags()->attach($request->tags); 
+       $release->tags()->attach($request->tags); 
 
         return redirect()->route('release')->with('status', 'Release was created !');
 
@@ -110,11 +111,14 @@ class ReleaseController extends Controller
     public function edit($id)
     {
         //dd('ddd');
+     //   $tags = Tag::all();
+
         $release = release::find($id);
+        $tags = Tag::all();
         // if (auth()->user()->id !== $release->user_id) {
         //     return redirect('/release')->with('error', ' You are not authorized');
         // }
-        return view('release.edit', compact('release'));
+        return view('release.edit', compact('release','tags'));
     }
 
 
@@ -138,7 +142,9 @@ class ReleaseController extends Controller
         $release = release::find($id);
         $release->name =  $request->title ;
         $release->body =  $request->body ;
-      //  $release->user_id = $request->id;
+       // $tags = Tag::all();
+        $release->tags()->sync($request->tags); 
+
         $release->save();
 
         return redirect()->route('release')->with('status', 'Release was updated !');

@@ -7,27 +7,24 @@ use Illuminate\Http\Request;
 
 class TagController extends Controller
 {
-    //
-
-    // public function create(Request $request)
-    // {
+    
+    public function index()
+    {
        
-    //     return view('release.create');
-   
+        $tags = Tag::orderBy('id', 'desc')->paginate(10);
+        $count = Tag::count();
+        return view('tag.index',  compact('tags', 'count'));
+    }
 
-    // }
-    // public function store(Request $request)
-    // {
+    public function show($id)
+    {
+        $tag = Tag::find($id);
 
-    //     $tag = new Tag();
-    //     $tag->name = '$first_tage';
-        
- 
-    //     $tag->save();
-    //     dd('HI');
- 
-    //     $release = Release::find([3, 4]);
-    //     $tag->releases()->attach($release);
-    //     return 'Success'; 
-    // }
+        return view('tag.show', compact('tag'));
+    }
+
+
+
+
+
 }

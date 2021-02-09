@@ -33,10 +33,10 @@ Route::post('/delete/{id}', [ReleaseController::class, 'destroy'])->name('delete
 
 //tags route 
 
-// Route::get('/tag/show/{id}', [TagController::class, 'show'])->name('tag.show');
+//  Route::get('/tag/show/{id}', [TagController::class, 'show'])->name('tag.show');
 // Route::get('/teg/create', [TagController::class, 'create'])->name('tag.create');
 // Route::post('/teg/store', [TagController::class, 'store'])->name('tag.store');
-// Route::get('/tag/tag/edit/{id}', [TagController::class, 'edit'])->name('tag.edit');
+ Route::get('/tag/tag/edit/{id}', [TagController::class, 'edit'])->name('tag.edit');
 // Route::put('/tag/update/{id}', [TagController::class, 'update'])->name('tag.update');
 // Route::post('/tag/delete/{id}', [TagController::class, 'destroy'])->name('tag.delete');
 

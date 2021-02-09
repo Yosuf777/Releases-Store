@@ -19,32 +19,8 @@
                <label for="body">Release body</label>
             <textarea name="body" id="body" cols="30" rows="4" class="form-control"> {{$release->body}}</textarea>
            </div>
-           
-           @foreach ($release->tags as $tag)
-           
-           <li>
-               <label>
-                   {{-- <input type="checkbox" name="tags[]"  checked>
-                   {{ $tag->name }} --}}
 
-                   <small class="text-muted" name="tags[]"> {{ $tag->name }}</small>
-
-            
-               </label>
-            </li> 
-              
-           @endforeach
-         
-          
-           @foreach ($tags as $tag)
-                  
-           <input type="checkbox" name="tags[]" value="{{ $tag->id }}" >
-           {{ $tag->name }}
-               @endforeach
-
-       
-
-
+   
             <div class="form-group">
                <button type="submit" class="btn btn-primary">Update</button>
            </div>

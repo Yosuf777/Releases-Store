@@ -66,7 +66,7 @@ class PageController extends Controller
 
         $page->save();
 
-        return redirect()->route('release')->with('status', 'page was created !');
+        return redirect()->route('show', ['id' =>  $request->release_id ])->with('status', 'page was created !');
 
     }
 

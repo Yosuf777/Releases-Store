@@ -22,8 +22,11 @@
                         {{ __('release') }}
                     </x-nav-link>
                     <x-nav-link :href="route('create')" :active="request()->routeIs('create')">
-                        {{ __('Create realese') }}
+                        {{ __('Create Realese') }}
                     </x-nav-link>
+                    {{-- <x-nav-link :href="{{ route('tag.show', [$tags->id]) }}" :active="request()->routeIs('tag.show')">
+                        {{ __('TAGS') }}
+                    </x-nav-link> --}}
                 </div>
             </div>
 

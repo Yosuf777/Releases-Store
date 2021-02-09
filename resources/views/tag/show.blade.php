@@ -55,10 +55,7 @@
 
                         @csrf
                         {{-- @method('DELETE') --}}
-                        <button type="submit" class="btn btn-danger float-left mr-5
-                        
-                        
-                        "> Delete</button>
+                        <button type="submit" class="btn btn-danger float-left"> Delete</button>
 
                     </form>
 
