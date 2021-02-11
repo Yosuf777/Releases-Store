@@ -16,10 +16,11 @@ class ReleaseController extends Controller
      */
     public function index()
     {
-       
+        $tags = Tag::all();
+
         $releases = release::orderBy('id', 'desc')->paginate(10);
         $count = release::count();
-        return view('release.index',  compact('releases', 'count'));
+        return view('release.index',  compact('releases', 'count' , 'tags'));
     }
     public function show($id)
     {
@@ -138,11 +139,12 @@ class ReleaseController extends Controller
             'body' => 'required|max:500'
 
         ]);
-
         $release = release::find($id);
+       // $release = release::find($id);
         $release->name =  $request->title ;
         $release->body =  $request->body ;
        // $tags = Tag::all();
+     //  dd($request->all());
         $release->tags()->sync($request->tags); 
 
         $release->save();
@@ -158,13 +160,15 @@ class ReleaseController extends Controller
      * @param  \App\Models\Release  $release
      * @return \Illuminate\Http\Response
      */
-    public function destroy($release)
+    public function destroy($release , Request $request) 
     {
     
         $release = release::find($release) ;
       //  dd('ddd');
 
         $release->delete();
+        $release->tags()->detach($request->tags); 
+
         return redirect('/release')->with('status', 'release was deleted !');
     }
 }

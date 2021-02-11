@@ -34,11 +34,15 @@
                         </li>
 
                     @endforeach
-
-
-
+                   
+                   
+                    {{-- <select class="selectpicker" multiple>
+                        <option>Mustard</option>
+                        <option>Ketchup</option>
+                        <option>Relish</option>
+                      </select> --}}
+                      
                 </div>
-
 
 
 

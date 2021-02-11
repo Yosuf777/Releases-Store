@@ -41,6 +41,19 @@
                         
                         <p class="card-text"> All releas: {{$count}}</p>
                         </div>
+                        <p>top tags</p>
+                        @foreach ($tags as $tag)
+                       <li>
+
+                            <label>
+                                <input type="button" name="tags[]" value="   {{ $tag->name }}">
+                               
+                            </label>
+
+                        </li>
+                       
+
+                    @endforeach
                     </div>
         </div>
     </div>
@@ -49,6 +62,7 @@
         <div class="col-md-12 d-flex justify-content-center">
             {{$releases->links()}}
         </div>
+
     </div>
 
 @endsection

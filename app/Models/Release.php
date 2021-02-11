@@ -23,8 +23,15 @@ public function user() {
 
 public function tags()
 {
-    return $this->belongsToMany(Tag::class , 'release_tag');
+    return $this->belongsToMany(Tag::class , 'release_tag', 'release_id' ,'tag_id');
 }
 
-
+public function hastags($tag){
+   // return true;
+    if ($this->tags()->where('tag_id', $tag)->first())
+    {
+        return true;
+    }
+    return false;
+}
 }
