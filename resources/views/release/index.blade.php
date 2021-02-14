@@ -41,16 +41,16 @@
                         
                         <p class="card-text"> All releas: {{$count}}</p>
                         </div>
-                        <p>top tags</p>
+                        <h1>top tags</h1>
                         @foreach ($tags as $tag)
-                       <li>
+                   
 
                             <label>
-                                <input type="button" name="tags[]" value="   {{ $tag->name }}">
+                                <input type="button" class="btn btn-default btn-lg " name="tags[]" value="   {{ $tag->name }}">
                                
                             </label>
 
-                        </li>
+                       
                        
 
                     @endforeach
